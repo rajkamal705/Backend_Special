@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../../FrontEnd/Shradha_Khapra/Temp_Rev"
+		},
+		{
+			"path": "../../../../../Java"
+		},
+		{
+			"path": "../../../../../work/BluePrint"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Temp_Rev"
+	}
+}
