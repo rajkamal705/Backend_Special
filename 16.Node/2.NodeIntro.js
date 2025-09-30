@@ -20,7 +20,7 @@
  -> we can create desktop app now or mobile app also using react native.
  -> node js is open source.
  -> now we are open to write server side logic.
- -> express is frameword for js to write server side application.
+ -> express is framework for js to write server side application.
  -> They tried to maintain a lot of things consistent for node environment by keeping the important concept of native js like event queue,
     microtask queue, promises etc.
  -> Here also we have event queue, here also we have microtask queue, event loop, promises...all these theory of browser side are kept consistent here.
@@ -46,6 +46,9 @@
         binary: binarySearch
      }
 
+     -> here, we are exporting linearSearch() fun using module.exports{}
+     -> in the same way, exporting binarySearch() fun also.
+
      => Module has two types: 1> Common js module 2> Es module : In Es module we can use import instead of require().
 
   4> require: require global helps in consume the module that is exported.
@@ -55,6 +58,16 @@
 
 // console.log(document); it will give error bec there is no document defined in node
 // console.log(process); 
-// console.log(__dirname);
+// console.log(__dirname); // This global show you the current directory, but this global is not always accessible(Q> find when it will not be accessble?).
+/**
+ * When using ES Modules (ECMAScript Modules): __dirname is a feature of CommonJS modules and is not directly available in
+   ES Modules. If your project uses "type": "module" in package.json or you're using .mjs files, __dirname will be undefined. 
+   To get the equivalent functionality in ES Modules, you need to construct it using import.meta.url, path, and url modules.
+ */
 console.log(module);
+
+/**
+ * module global is an object, having property like exports:{} using which we can expose the usecase of one file to other.
+ */
+
 

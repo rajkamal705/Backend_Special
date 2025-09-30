@@ -61,9 +61,32 @@ const _ = require("lodash");
 // console.log(curriedSum(1, 2));
 // console.log(curriedSum(2)(3));
 
+// 6> Real life example:
+// function sendAutoEmail(to) {
+//    return function (subject) {
+//       return function (body) {
+//          console.log(`sending email to ${to} with subject: ${subject} and final message is ${body}`);
+//       }
+//    }
+// }
+
+// let step1 = sendAutoEmail("raj@gmail.com");
+// let step2 = step1("random subject email");
+// step2("This is final body for testing");
+
+// sendAutoEmail("raj@gmail.com")("this is random subject messsage")("this is final message body for this email");
+
 /**
  * 1> call() 2> apply() 3> bind() 
  */
+
+// 1> Call():
+// Purpose: Invokes a function immediately with a specified this value and arguments passed individually.
+const person = { name: "Raj Kamal" };
+function greet(city, job) {
+   console.log(`Hello, my name is ${this.name}. I live in ${city} and I am a ${job}.`);
+}
+greet.call("patna", "sde");
 
 
 
