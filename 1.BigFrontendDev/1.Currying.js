@@ -82,11 +82,102 @@ const _ = require("lodash");
 
 // 1> Call():
 // Purpose: Invokes a function immediately with a specified this value and arguments passed individually.
-const person = { name: "Raj Kamal" };
-function greet(city, job) {
-   console.log(`Hello, my name is ${this.name}. I live in ${city} and I am a ${job}.`);
-}
-greet.call("patna", "sde");
+
+// Example 1: 
+// const person = { name: "Raj Kamal" };
+// function greet(city, job) {
+//    console.log(`Hello, my name is ${this.name}. I live in ${city} and I am a ${job}.`);
+// }
+// greet.call("patna", "sde");
+
+// Example 2: 
+// function greet(greeting, punctuation) {
+//    console.log(greeting + ", " + this.name + punctuation);
+// }
+// const person = {name: "Raj"};
+// greet.call(person, "Hello", "!");
+
+/**
+ * Note : 
+ * First argument = what this should refer to (person).
+ * Next arguments = normal function arguments.
+ */
+
+// 2> apply(): 
+// Purpose: Similar to call(), but arguments are passed as an array. Useful when you already have arguments in an array.
+
+// function greet(greeting, punctuation) {
+//    console.log(greeting + ", " + this.name + punctuation);
+// }
+
+// const person = {name: "Raj"};
+// greet.apply(person, ["Hello", "!!!"]);
+
+/**
+ * Note: 
+ * First argument = this value.
+ * Second argument = array of arguments.
+ */
+
+// 3> bind(): 
+// Returns a new function with this permanently set.
+// Unlike call/apply, it does not execute immediately.
+
+// function greet(greeting, punctuation) {
+//    console.log(greeting + ", " + this.name + punctuation);
+// }
+
+// const person = {name: "Raj"};
+// const boundGreet = greet.bind(person, "Hey");
+// boundGreet("?");
+
+
+// Example: 
+// let numbers = [1, 5, 10, 3];
+// console.log(Math.max.apply(null, numbers));
+
+/**
+ * Clear concept of currying:
+ */
+
+// Example 1:
+// function curryAdd(a) {
+//    return function(b) {
+//       return function(c) {
+//          return a + b + c;
+//       }
+//    }
+// }
+
+// console.log(curryAdd(2)(3)(4));
+
+// Example 2:
+// function add(a, b, c) {
+//   return a + b + c;
+// }
+
+// function curryAdd(fn) {
+//    return function(a) {
+//       return function(b) {
+//          return function(c) {
+//             return fn(a, b, c);
+//          }
+//       }
+//    }
+// }
+
+// console.log(curryAdd(add)(2)(3)(4));
+
+/**
+ * Note:
+ -> curryAdd is just a higher-order function.
+ -> The actual computation (add) is passed in as an argument.
+ -> The closure ensures that fn, a, b stay remembered until the final call.
+ */
+
+// Example 3:
+
+
 
 
 
